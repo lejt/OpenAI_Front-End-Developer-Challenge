@@ -11,8 +11,8 @@ import fetchAPI from '../../utilities/fetchAPI';
 import AIResponses from '../../components/AIReponses/AIResponses';
 
 function App() {
-  const [question, setQuestion] = useState({ 
-    prompt: "Write a poem about a dog wearing skis",
+  const [data, setData] = useState({ 
+    prompt: "",
     temperature: 0.5,
     max_tokens: 64,
     top_p: 1.0,
@@ -20,26 +20,28 @@ function App() {
     presence_penalty: 0.0,
   });
 
-  const [reply, setReply] = useState([]);
+  const [responses, setResponses] = useState([]);
 
   const handleChange = (e) => {
-    setQuestion({...question,
-      [e.target.name]: e.target.value,
+    setData({ 
+      ...data, 
+      prompt: e.target.value 
     })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const aiReply = await fetchAPI(question);
-    // console.log('aiReply: ', aiReply)
-    
-    setReply((prevReplies) => 
-      [...prevReplies,
-        {answer: aiReply.choices[0].text,
-        timestamp: Date(),
-      }]
+    const aiReply = await fetchAPI(data);
+
+    setResponses((prevResponses) => 
+      [...prevResponses,
+        {
+          dataInput: data,
+          answer: aiReply.choices[0].text,
+          timestamp: Date(),
+        }
+      ]
     )
-    console.log('reply: ', reply)
   }
 
   return (
@@ -47,9 +49,17 @@ function App() {
       {
         <>
           <h1>OPENAI Q&A</h1>
-          <input type="text" placeholder="Ask a question" name="prompt" value={question.prompt} onChange={handleChange} />
+          <input type="text" placeholder="Ask a question" value={data.prompt} onChange={handleChange} />
           <button onClick={handleSubmit}>Submit</button><br/>
-          {reply && (reply.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp))).map((re) => (<AIResponses question={question} re={re} /> ))}
+
+          {/* sorts reply array based on recency of timestamp */}
+          {responses && 
+          (responses.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp)))
+            .map((response) => (
+              <AIResponses data={response.dataInput} answer={response.answer} time= {response.timestamp} key={response.timestamp} /> 
+              
+            )
+          )}
 
         </>
       }

@@ -2,15 +2,19 @@ import React from 'react';
 import responseStyles from './AIResponses.css';
 
 
-function AIResponses({ question, re }) {
+function AIResponses({ data, answer, time }) {
+
   return (
     <>
-        <h3>Question: <span>{question.prompt}</span></h3>
-        <h3>Response: </h3>
         <p>
-            {re.answer}
+          <strong>Question:</strong> {data.prompt}
         </p>
-        <strong>{re.timestamp.toLocaleString()}</strong>
+
+        <p>
+          <strong>Response:</strong> {answer}
+        </p>
+
+        <p>{time.toLocaleString()}</p>
     </>
   )
 }
