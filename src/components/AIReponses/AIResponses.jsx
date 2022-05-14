@@ -7,7 +7,7 @@ function AIResponses({ data, answer, time }) {
   return (
     <>
         <p>
-          <strong>Question:</strong> {data.prompt}
+          <strong>Prompt:</strong> {data.prompt}
         </p>
 
         <p>
