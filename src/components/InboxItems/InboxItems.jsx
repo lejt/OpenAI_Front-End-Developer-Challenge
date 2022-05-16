@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { PromptContext } from '../../PromptContext';
+
+import { Flex } from '../styles/Flex.styled';
 import { StyledInboxItems } from '../styles/InboxItems.styled';
 
 function InboxItems({ data, time }) {
@@ -17,9 +19,14 @@ function InboxItems({ data, time }) {
 
     return (
         <StyledInboxItems onClick={() => handleDisplay({time})}>
-            {promptTitle.length > 30 ? `${promptTitle.substring(0,30)}...` : promptTitle}
-            <br/>
-            {time.toLocaleString()}
+            <Flex style={{flexDirection: 'column'}}>
+                <div style={{color: '#2db98a'}}>
+                    {promptTitle.length > 30 ? `${promptTitle.substring(0,30)}...` : promptTitle}
+                </div>
+                <div style={{color: '#b3b3b3'}}>
+                    {time}
+                </div>
+            </Flex>
         </StyledInboxItems>
     )
 }

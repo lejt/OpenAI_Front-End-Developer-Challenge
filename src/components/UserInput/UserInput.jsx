@@ -37,7 +37,7 @@ function UserInput() {
           {
           dataInput: data,
           answer: aiReply.choices[0].text,
-          timestamp: new Date(),
+          timestamp: new Date().toLocaleString(),
           }
       ]
     )

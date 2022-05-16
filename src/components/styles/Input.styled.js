@@ -4,9 +4,8 @@ export const StyledUserEmail = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;
     border: 1px solid black;
-    box-shadow: 5px 10px #888888;
+    box-shadow: 5px 10px black;
 
     .user__send, .user__message {
         width: 100%;
@@ -22,7 +21,7 @@ export const StyledUserEmail = styled.div`
     }
 
     .user__message {
-        background-color: ${({ theme }) => theme.colors.emailOutput};
+        background-color: ${({ theme }) => theme.colors.emailInput};
     }
 
     textarea {
@@ -30,7 +29,7 @@ export const StyledUserEmail = styled.div`
         min-height: 50px;
         border-style: none;
         // background-color: transparent;
-        background-color: ${({ theme }) => theme.colors.emailOutput}
+        background-color: ${({ theme }) => theme.colors.emailInput}
     }
     textarea:hover {
         background-color: ;

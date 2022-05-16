@@ -7,10 +7,16 @@ function InboxMail({ singleResponse }) {
 
     return (
         <StyledInboxMail>
-            {/* Check if it has output */}
-            {response.dataInput.prompt}<br/><br/>
-            {response.answer}<br/><br/>
-            {response.timestamp.toLocaleString()}
+            <div>
+                <strong>User:</strong>&nbsp;&nbsp; {response.dataInput.prompt} 
+            </div>
+            <div>
+                <strong>AI:</strong>&nbsp;&nbsp; {response.answer ? response.answer : <p>- no response found -</p>}
+            </div>
+            <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                {response.timestamp}
+               
+            </div>
         </StyledInboxMail>
     )
 }

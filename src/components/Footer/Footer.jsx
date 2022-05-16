@@ -16,8 +16,7 @@ function Footer() {
             <Flex>
                 <ul style={{textAlign: 'center'}}>
                     <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua
+                        Thank you for visiting my application project. <br/> Contact me below for more.
                     </li>
                     <li>jacky.tam92@outlook.com</li>
                 </ul>

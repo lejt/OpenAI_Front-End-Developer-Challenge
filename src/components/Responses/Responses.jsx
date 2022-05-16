@@ -1,19 +1,23 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { PromptContext } from '../../PromptContext';
-import Response from '../Response/Response';
 import InboxItems from '../InboxItems/InboxItems';
 import InboxMail from '../InboxMail/InboxMail';
+import { BiSort } from 'react-icons/bi';
 
 import { Flex } from '../styles/Flex.styled';
-import { StyledAIEmail, StyledAIEmailHeader } from '../styles/Output.styled';
-import { StyledInbox } from '../styles/Inbox.styled';
+import { StyledAIEmail, StyledAIEmailHeader, StyledInbox } from '../styles/Output.styled';
+import { StyledButton } from '../styles/Button.styled'
 
 function Responses() {
 
   const [{ responses, setResponses, emailSelector }] = useContext(PromptContext);
-
   const [sort, setSort] = useState(true);
 
+  function handleSort() {
+    setSort(!sort)
+  }
+
+  // Saves OpenAI output in local storage for persistence
   useEffect(() => {
     const responseRecords = window.localStorage.getItem('MY_OPENAI_MOVIE_IDEAS');
     
@@ -26,20 +30,14 @@ function Responses() {
     window.localStorage.setItem('MY_OPENAI_MOVIE_IDEAS', JSON.stringify(responses))
   }, [responses])
 
-
-  function handleSort() {
-    setSort(!sort)
-  }
-
-
   return (
     <StyledAIEmail>
       <StyledAIEmailHeader>
         <div className='aiEmail__header'>
-          <h5>Open AI - ghost writer</h5> 
+          <h5>Account: Ghost Writer AI</h5> 
         </div>
         <div className='aiEmail__sort'>
-          <button onClick={handleSort} style={{border: 'none'}}>Sort</button>
+          <StyledButton onClick={handleSort}><BiSort/></StyledButton>
         </div>
       </StyledAIEmailHeader>
 
@@ -55,7 +53,7 @@ function Responses() {
           }
         </StyledInbox>
 
-        <Flex style={{minWidth: '70%', height: '300px', backgroundColor: 'pink', overflowY: 'scroll'}}>
+        <Flex style={{minWidth: '70%', maxHeight: '300px', backgroundColor: 'beige', overflowY: 'scroll'}}>
           {emailSelector && 
             <InboxMail singleResponse={responses.filter((response) => response.timestamp === emailSelector)}/>
           }
