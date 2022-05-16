@@ -1,8 +1,6 @@
 import React from 'react';
-import responseStyles from './AIResponses.css';
 
-
-function AIResponses({ data, answer, time }) {
+function Response({ data, answer, time }) {
 
   return (
     <>
@@ -19,4 +17,4 @@ function AIResponses({ data, answer, time }) {
   )
 }
 
-export default AIResponses
+export default Response
