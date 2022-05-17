@@ -1,7 +1,7 @@
 # Huddle - single page responsive styling using styled-components
 
 ## General Information
-This project is used to practice styled components with a majority of containerized styling to each component and one global theme provider. 
+This is a [project](https://ai-movie-ghost-writer.netlify.app/) submission for the "Shopify Technical Challenge". The objective of the project is to use GPT-3 (an AI model created by OpenAI) to process user input in a way to showcase the project creator's creativity and decision making process. As a user, you are allowed to choose a movie genre and type in a topic. The data is submitted to the AI and a response is displayed in an email format. The theme of this project revolves around the user using an AI as a ghost writer for movie ideas.
 
 <img src="./public/images/HomePage.jpg" height=250px width=230px overflow="hidden">  <img  src="./public/images/MobileViewHomePage.jpg" height=250px width=120px overflow="hidden"> 
 
