@@ -10,9 +10,9 @@ export const StyledSocialIcons = styled.div`
     }
     
     a {
-        border: 1px solid #fff;
+        border: 1px solid #183432;
         border-radius: 50%;
-        color: #fff;
+        color: #183432;
         display: inline-flex;
         align-items: center;
         justify-content: center;

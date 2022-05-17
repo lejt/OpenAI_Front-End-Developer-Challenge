@@ -65,7 +65,6 @@ function UserInput() {
       
       <div className="user__message">
       
-
           <div className="user__input">
             Give me a(n) &nbsp;
               <select value={film.value} onChange={handleSelect}>

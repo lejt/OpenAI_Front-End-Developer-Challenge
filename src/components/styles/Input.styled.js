@@ -9,6 +9,10 @@ export const StyledUserEmail = styled.div`
 
     .user__send, .user__message {
         width: 100%;
+
+        @media (max-width: ${({ theme }) => theme.mobile}) {
+            font-size: 14px;
+        }
     }
 
     .user__send > div, .user__input {

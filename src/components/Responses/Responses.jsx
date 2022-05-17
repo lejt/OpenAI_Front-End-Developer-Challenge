@@ -53,7 +53,7 @@ function Responses() {
           }
         </StyledInbox>
 
-        <Flex style={{minWidth: '70%', maxHeight: '300px', backgroundColor: 'beige', overflowY: 'scroll'}}>
+        <Flex className='inbox__mail__content' style={{minWidth: '70%', height: '300px', backgroundColor: 'beige', overflowY: 'scroll'}}>
           {emailSelector && 
             <InboxMail singleResponse={responses.filter((response) => response.timestamp === emailSelector)}/>
           }

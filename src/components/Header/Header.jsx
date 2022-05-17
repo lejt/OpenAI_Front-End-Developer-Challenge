@@ -9,7 +9,7 @@ function Header() {
   return (
     <StyledHeader>
         <Container>
-            <Flex style={{justifyContent: 'space-between', alignItems: 'center'}}>
+            <Flex className='header__content' style={{justifyContent: 'space-between', alignItems: 'center'}}>
                 <Logo src='./images/OpenAi_Logo.svg' alt='' /> 
                 <h4 className="title">Ghost Writer Services - Department of Ideas</h4>
             </Flex>

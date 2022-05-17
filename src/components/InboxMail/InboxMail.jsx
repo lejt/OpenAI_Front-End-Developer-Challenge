@@ -15,7 +15,6 @@ function InboxMail({ singleResponse }) {
             </div>
             <div style={{display: 'flex', justifyContent: 'flex-end'}}>
                 {response.timestamp}
-               
             </div>
         </StyledInboxMail>
     )

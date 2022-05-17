@@ -48,4 +48,8 @@ export const StyledInbox = styled.div`
     overflow-y: scroll;
     font-size: 1rem;
     line-height: 1.5rem;
+    
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+        min-height: 500px;
+    }
 `
