@@ -20,8 +20,8 @@ function Responses() {
   // Saves OpenAI output in local storage for persistence
   useEffect(() => {
     const responseRecords = window.localStorage.getItem('MY_OPENAI_MOVIE_IDEAS');
-    
-    if (JSON.parse(responseRecords).length > 0) {
+
+    if (responseRecords && JSON.parse(responseRecords).length > 0) {
       setResponses(JSON.parse(responseRecords))
     }
   }, [])

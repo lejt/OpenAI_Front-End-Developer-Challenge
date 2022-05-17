@@ -15,6 +15,8 @@ This is a [project](https://ai-movie-ghost-writer.netlify.app/) submission for t
 ### Implemented
 * Use of Open AI for input and output relating to movie ideas
 * Localized styling with single Global style with theme provider
+* Local storage used to persist user input and AI output even upon refresh
+* Sort button can be used to display data in terms of recency
 
 ### Future Development Ideas
 * Increase responsive range of devices
