@@ -10,7 +10,6 @@ export const StyledFooter = styled.footer`
     p {
         text-align: center;
     }
-    
 `
 
 export const StyledFooterContent = styled.div`

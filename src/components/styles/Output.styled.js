@@ -13,7 +13,6 @@ export const StyledAIEmailHeader = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    // height: 30px;
     
     & > .aiEmail__header {
         display: flex;

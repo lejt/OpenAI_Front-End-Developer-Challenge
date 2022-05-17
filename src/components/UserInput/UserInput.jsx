@@ -29,7 +29,6 @@ function UserInput() {
       data.prompt += '.'
     }
     
-    console.log('prompt: ',data.prompt)
     const aiReply = await fetchAPI(data);
 
     setResponses((prevResponses) => 
@@ -67,11 +66,11 @@ function UserInput() {
       
           <div className="user__input">
             Give me a(n) &nbsp;
+
               <select value={film.value} onChange={handleSelect}>
                 <option value="Hollywood action film">action film</option>
                 <option value="Hollywood comedy film">comedy film</option>
                 <option value="Hollywood romantic film">romantic film</option>
-                <option value="Hollywood romantic comedy film">rom-com film</option>
                 <option value="Hollywood horror film">horror film</option>
                 <option value="Hollywood fantasy film">fantasy film</option>
               </select>
@@ -80,6 +79,7 @@ function UserInput() {
             idea about
             &nbsp;
             <br />
+
             <textarea placeholder="turtles in space" value={promptUserInput} onChange={handleChange} />
           </div>
 
@@ -87,7 +87,6 @@ function UserInput() {
             <StyledButton onClick={handleSubmit} disabled={(promptUserInput.length < 3) ? true : false}>SEND</StyledButton>
           </div>
     
-
       </div>
     </StyledUserEmail>
   )

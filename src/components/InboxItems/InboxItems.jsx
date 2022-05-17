@@ -23,6 +23,7 @@ function InboxItems({ data, time }) {
                 <div style={{color: '#2db98a'}}>
                     {promptTitle.length > 30 ? `${promptTitle.substring(0,30)}...` : promptTitle}
                 </div>
+                
                 <div style={{color: '#b3b3b3'}}>
                     {time}
                 </div>

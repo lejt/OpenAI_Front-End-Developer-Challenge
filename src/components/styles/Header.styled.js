@@ -20,8 +20,4 @@ export const StyledHeader = styled.header`
 
 export const Logo = styled.img`
     height: 30px;
-    
-    @media (max-width: ${( { theme } ) => theme.mobile}) {
-      
-    }
 `

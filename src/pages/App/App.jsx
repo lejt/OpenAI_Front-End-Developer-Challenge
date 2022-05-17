@@ -1,11 +1,10 @@
-import './App.css';
 import React from "react";
 import { ThemeProvider } from 'styled-components';
 import { PromptProvider } from '../../PromptContext';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import UserInput from '../../components/UserInput/UserInput';
-import Responses from '../../components/Responses/Responses';
+import AIOutput from '../../components/AIOutput/AIOutput';
 
 import { GlobalStyles } from '../../components/styles/Global.styled';
 import { Container } from '../../components/styles/Container.styled';
@@ -27,7 +26,6 @@ const theme = {
   }
 }
 
-
 function App() {
 
   return (
@@ -37,7 +35,7 @@ function App() {
       <PromptProvider>
         <Container>
           <UserInput />
-          <Responses />
+          <AIOutput />
         </Container>
       </PromptProvider>
       <Footer />

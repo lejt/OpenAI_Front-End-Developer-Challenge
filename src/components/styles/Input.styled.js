@@ -32,13 +32,11 @@ export const StyledUserEmail = styled.div`
         width: 100%;
         min-height: 50px;
         border-style: none;
-        // background-color: transparent;
         background-color: ${({ theme }) => theme.colors.emailInput}
     }
     textarea:hover {
         background-color: ;
         filter: brightness(85%);
-        
     }
 
     .user__button {

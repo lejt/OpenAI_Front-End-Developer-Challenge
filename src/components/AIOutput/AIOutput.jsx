@@ -42,7 +42,6 @@ function Responses() {
       </StyledAIEmailHeader>
 
       <Flex>
-
         <StyledInbox >
           {responses && (
               (sort ? (responses.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp))) : (responses.sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp))))
@@ -58,7 +57,6 @@ function Responses() {
             <InboxMail singleResponse={responses.filter((response) => response.timestamp === emailSelector)}/>
           }
         </Flex>
-
       </Flex>
 
     </StyledAIEmail>
